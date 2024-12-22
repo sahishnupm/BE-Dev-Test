@@ -27,3 +27,10 @@ class ExternalAPIException(HTTPException):
             status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
             detail="Failed to fetch joke from external API"
         ) 
+
+class DatabaseException(HTTPException):
+    def __init__(self, detail: str = "A database error occurred"):
+        super().__init__(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=detail
+        )

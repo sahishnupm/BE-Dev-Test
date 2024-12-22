@@ -6,7 +6,7 @@ from pydantic import BaseModel
 class Joke(Document):
     joke_text: str
     source_id: Optional[str] = None
-    created_at: datetime = datetime.utcnow()
+    created_at: datetime = datetime.now()
     updated_at: Optional[datetime] = None
 
     class Settings:
